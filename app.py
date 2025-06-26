@@ -32,7 +32,7 @@ def combine_report_data(report_sheets):
 # Main app
 def main():
     st.set_page_config(page_title="Revenue & Occupancy Agent", layout="wide")
-    st.title("📊 Revenue & Occupancy AI Agent (Powered by Groq)")
+    st.title("📊 Revenue & Occupancy AI Agent")
 
     # Load data
     onboarding_sheets, report_sheets = load_data()
@@ -47,10 +47,10 @@ def main():
 
     # Create Groq agent
     if not GROQ_API_KEY:
-        st.error("Missing Groq API key. Please set GROQ_API_KEY in your environment or Streamlit secrets.")
+        st.error("Missing API key. Please set GROQ_API_KEY in your environment or Streamlit secrets.")
         return
 
-    st.info("Loading Groq AI agent...", icon="💡")
+    st.info("Loading AI agent...", icon="💡")
     llm = ChatOpenAI(
         # api_key=GROQ_API_KEY,
                      openai_api_key=GROQ_API_KEY,
